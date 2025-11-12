@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:football_news/screens/menu.dart';
 import 'package:football_news/screens/newslist_form.dart';
 import 'package:football_news/widgets/news_card.dart';
+// Add this import at the top
+import 'package:football_news/screens/news_entry_list.dart';
 
 
 class LeftDrawer extends StatelessWidget {
@@ -64,16 +66,14 @@ class LeftDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.remove_red_eye_sharp),
-            title: const Text('View News'),
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('News List'),
             // Bagian redirection ke MyHomePage
             onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyHomePage() //TODO PAS UDAH ADA VIEW NEWS NANTI UBAH
-
-                  ));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NewsEntryListPage()),
+              );
             },
           ),
         ],
